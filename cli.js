@@ -41,4 +41,12 @@ cli
     } else console.log('It looks like there\'s already something in that directory!');
   })
 
+cli
+  .command('serve')
+  .description('Starts a livereload server')
+  .action((options) => {
+    const gulp = require('./gulpfile');
+    return gulp();
+  })
+
 cli.parse(process.argv)
